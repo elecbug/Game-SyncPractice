@@ -5,6 +5,10 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncPractice", "SyncPractice\SyncPractice.csproj", "{107A1862-54E5-405C-B478-95E4895ABB7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncServer", "SyncServer\SyncServer.csproj", "{F465ABBF-70A5-4775-BD8C-D942559E12DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packet", "Packet\Packet.csproj", "{40B92BB2-A58B-4101-8256-5295BD307400}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{107A1862-54E5-405C-B478-95E4895ABB7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{107A1862-54E5-405C-B478-95E4895ABB7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{107A1862-54E5-405C-B478-95E4895ABB7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F465ABBF-70A5-4775-BD8C-D942559E12DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F465ABBF-70A5-4775-BD8C-D942559E12DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F465ABBF-70A5-4775-BD8C-D942559E12DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F465ABBF-70A5-4775-BD8C-D942559E12DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B92BB2-A58B-4101-8256-5295BD307400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B92BB2-A58B-4101-8256-5295BD307400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B92BB2-A58B-4101-8256-5295BD307400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B92BB2-A58B-4101-8256-5295BD307400}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
