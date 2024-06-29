@@ -1,3 +1,4 @@
+
 namespace SyncPractice
 {
     public class MainForm : Form
@@ -6,6 +7,8 @@ namespace SyncPractice
 
         public MainForm()
         {
+            InitData();
+
             ClientSize = new Size(800, 600);
 
             int size = 50;
@@ -20,6 +23,29 @@ namespace SyncPractice
                 Size = new Size(size, size),
                 BackColor = Color.Black,
             };
+        }
+
+        private void InitData()
+        {
+            string file = "init-data.json";
+
+            if (File.Exists(file) == true)
+            {
+                using (StreamWriter sw = new StreamWriter(file))
+                {
+
+                }
+            }
+
+            using (StreamReader sr = new StreamReader(file))
+            {
+
+            }
+        }
+
+        private class InitDataJson
+        {
+
         }
     }
 }
