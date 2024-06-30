@@ -60,6 +60,11 @@ public class Program
                                         Packet.NewUser user = JsonSerializer.Deserialize<Packet.NewUser>(data)!;
                                         name = user.Name;
 
+                                        if (users.Find(x => x.Name == name) != null)
+                                        {
+                                            break;
+                                        }
+
                                         lock (users)
                                         {
                                             users.Add(new User()
@@ -152,7 +157,7 @@ public class Program
                     }
                     lock (users)
                     {
-                        User? u = users.First(x => x.Name == name);
+                        User? u = users.FirstOrDefault(x => x.Name == name);
 
                         if (u != null)
                         {

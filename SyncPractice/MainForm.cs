@@ -171,21 +171,27 @@ namespace SyncPractice
                             case Packet.PacketType.DeleteUser:
                                 {
                                     Packet.DeleteUser user = JsonSerializer.Deserialize<Packet.DeleteUser>(data)!;
-                                    Label target = OtherPlayers.First(x => x.Text == user.Name);
+                                    Label? target = OtherPlayers.FirstOrDefault(x => x.Text == user.Name);
 
-                                    OtherPlayers.Remove(target);
-                                    target.Dispose();
+                                    if (target != null)
+                                    {
+                                        OtherPlayers.Remove(target);
+                                        target.Dispose();
+                                    }
                                 }
                                 break;
                             case Packet.PacketType.MoveUser:
                                 {
                                     Packet.MoveUser user = JsonSerializer.Deserialize<Packet.MoveUser>(data)!;
-                                    Label target = OtherPlayers.First(x => x.Text == user.Name);
+                                    Label? target = OtherPlayers.FirstOrDefault(x => x.Text == user.Name);
 
-                                    Invoke(() =>
+                                    if (target != null)
                                     {
-                                        target.Location = new Point(user.X - X + Player.Location.X, user.Y - Y + Player.Location.Y);
-                                    });
+                                        Invoke(() =>
+                                        {
+                                            target.Location = new Point(user.X - X + Player.Location.X, user.Y - Y + Player.Location.Y);
+                                        });
+                                    }
                                 }
                                 break;
                             case Packet.PacketType.Chatting:
@@ -275,7 +281,7 @@ namespace SyncPractice
             {
                 return new InitDataJson()
                 {
-                    IpEndPoint = "127.0.0.1:1479",
+                    IpEndPoint = Resource.Ip,
                     Name = "User-" + new Random().Next(0, 10000),
                     Color = new Packet.User.Color()
                     {
