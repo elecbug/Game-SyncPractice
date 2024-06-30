@@ -152,7 +152,12 @@ public class Program
                     }
                     lock (users)
                     {
-                        users.Remove(users.First(x => x.Name == name));
+                        User? u = users.First(x => x.Name == name);
+
+                        if (u != null)
+                        {
+                            users.Remove(u);
+                        }
                     }
                 }
             }).Start();
